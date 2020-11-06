@@ -1,0 +1,24 @@
+{
+  "name": "irving-2021",
+  "version": "1.0.0",
+  "description": "Irving 2021.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "irving dev",
+    "build": "irving build",
+    "start": "irving start",
+    "link-all": "npm install && npx irving link-all",
+    "predev": "npx check-node-version --package"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:alleyinteractive/irving-2021.git"
+  },
+  "author": "Alley",
+  "license": "ISC",
+  "dependencies": {
+    "@irvingjs/core": "~5.0.0",
+    "@irvingjs/styled-components": "~5.0.1",
+    "@irvingjs/wordpress": "~5.0.0"
+  }
+}
