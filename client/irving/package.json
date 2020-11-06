@@ -7,8 +7,7 @@
     "dev": "irving dev",
     "build": "irving build",
     "start": "irving start",
-    "link-all": "npm install && npx irving link-all",
-    "predev": "npx check-node-version --package"
+    "link-all": "npm install && npx irving link-all"
   },
   "repository": {
     "type": "git",
@@ -18,6 +17,7 @@
   "license": "ISC",
   "dependencies": {
     "@irvingjs/core": "~5.0.0",
+    "@irvingjs/integrations": "^5.0.2",
     "@irvingjs/styled-components": "~5.0.1",
     "@irvingjs/wordpress": "~5.0.0"
   }

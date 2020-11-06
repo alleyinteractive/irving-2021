@@ -1,0 +1,6 @@
+{
+  "name": "irving/text",
+  "config": {
+    "content": "template-parts/header.json"
+  }
+}
