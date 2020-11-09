@@ -37,7 +37,7 @@ function theme_setup() {
 	// Set up theme's use of wp_nav_menu().
 	register_nav_menus(
 		[
-			'header' => __( 'Primary', 'irving-2021' ),
+			'header' => __( 'Primary', 'irving-twentytwentyone' ),
 		]
 	);
 
