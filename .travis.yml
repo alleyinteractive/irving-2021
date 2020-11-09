@@ -47,6 +47,8 @@ before_script:
 
   - export PATH="${HOME}/.config/composer/vendor/bin:${PATH}"
 
+  - export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+
   # Couple the PHPUnit version to the PHP version.
   - composer global require "phpunit/phpunit=6.1.*"
 
