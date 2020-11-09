@@ -1,4 +1,4 @@
-# Travis CI (MIT License) configuration file for Irving 2021
+# Travis CI (MIT License) configuration file for the Irving 2021 theme
 # @link https://travis-ci.org/
 
 # Bionic image has PHP versions 7.1,7.2,7.3 pre-installed
@@ -81,7 +81,7 @@ before_script:
   # Set up phpcs.
   - |
     if [[ "$WP_PHPCS" == "1" ]] ; then
-      composer g require --dev automattic/vipwpcs dealerdirect/phpcodesniffer-composer-installer
+      composer install
     fi
 
   # Set up node_modules.
@@ -114,7 +114,7 @@ script:
   # @link http://pear.php.net/package/PHP_CodeSniffer/
   - |
     if [[ "$WP_PHPCS" == "1" ]] ; then
-      phpcs -n
+      composer phpcs
     fi
 
   # Run the theme's unit tests, both in single and multisite.
