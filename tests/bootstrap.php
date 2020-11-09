@@ -1,12 +1,18 @@
 <?php
+/**
+ * Bootstrap testing suite.
+ *
+ * @package Irving_2020
+ */
+
 if ( ! defined( 'WP_CONTENT_DIR' ) ) {
 	$cwd = explode( 'wp-content', dirname( __FILE__ ) );
 	define( 'WP_CONTENT_DIR', $cwd[0] . '/wp-content' );
 }
 
-// Load Core's test suite
+// Load Core's test suite.
 $_tests_dir = getenv( 'WP_TESTS_DIR' );
-if ( !$_tests_dir ) {
+if ( ! $_tests_dir ) {
 	$_tests_dir = '/tmp/wordpress-tests-lib';
 }
 
@@ -29,16 +35,22 @@ function _manually_load_environment() {
 	 *
 	 * @see https://core.trac.wordpress.org/changeset/29120.
 	 */
-	add_filter( 'pre_option_upload_path', function () {
-		return ABSPATH . 'wp-content/uploads';
-	} );
+	add_filter(
+		'pre_option_upload_path',
+		function () {
+			return ABSPATH . 'wp-content/uploads';
+		}
+	);
 
 	// Set up plugins.
-	update_option( 'active_plugins', array(
-		'jetpack/jetpack.php'
-	) );
+	update_option(
+		'active_plugins',
+		[
+			'jetpack/jetpack.php',
+		]
+	);
 
-	// phpcs:disable This is only for unit testing.
+	// phpcs:disable
 	if ( ! defined( 'JETPACK_DEV_DEBUG' ) ) {
 		define( 'JETPACK_DEV_DEBUG', true );
 	}
@@ -66,6 +78,6 @@ function _cache_test_data( $new_value = null ) {
 	return $value;
 }
 
-// Include core's bootstrap
+// Include core's bootstrap.
 // phpcs:ignore This is only for unit testing.
 require $_tests_dir . '/includes/bootstrap.php';

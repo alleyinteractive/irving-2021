@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7343c6f178ef7042d1ceba102a161561",
+    "content-hash": "d40e45466dbb0a6e79380687af30b5b2",
     "packages": [],
     "packages-dev": [
         {
@@ -12,8 +12,14 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/alleyinteractive/Alley-Coding-Standards",
+                "url": "https://github.com/alleyinteractive/alley-coding-standards.git",
                 "reference": "40ac47bc2119934a767a3c0ef194c7943b07c658"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/alleyinteractive/alley-coding-standards/zipball/40ac47bc2119934a767a3c0ef194c7943b07c658",
+                "reference": "40ac47bc2119934a767a3c0ef194c7943b07c658",
+                "shasum": ""
             },
             "require": {
                 "automattic/vipwpcs": "^2.1.0",
@@ -23,10 +29,15 @@
             },
             "default-branch": true,
             "type": "phpcodesniffer-standard",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-2.0-or-later"
             ],
             "description": "PHPCS sniffs for Alley Interactive",
+            "support": {
+                "issues": "https://github.com/alleyinteractive/alley-coding-standards/issues",
+                "source": "https://github.com/alleyinteractive/alley-coding-standards/tree/0.2.0"
+            },
             "time": "2020-10-14T21:50:28+00:00"
         },
         {
