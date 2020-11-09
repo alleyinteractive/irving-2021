@@ -1,8 +1,8 @@
 <?php
 /**
- * Search modifications
+ * Search modifications.
  *
- * @package Irving_2021
+ * @package Irving_Twenty_Twenty_One
  */
 
-namespace Irving_2021;
+namespace Irving_Twenty_Twenty_One;

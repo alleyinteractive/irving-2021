@@ -2,7 +2,7 @@
 /**
  * Bootstrap testing suite.
  *
- * @package Irving_2020
+ * @package Irving_Twenty_Twenty_One
  */
 
 if ( ! defined( 'WP_CONTENT_DIR' ) ) {

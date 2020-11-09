@@ -2,10 +2,10 @@
 /**
  * Theme setup.
  *
- * @package Irving_2021
+ * @package Irving_Twenty_Twenty_One
  */
 
-namespace Irving_2021;
+namespace Irving_Twenty_Twenty_One;
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.

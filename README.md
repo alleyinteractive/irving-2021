@@ -1,10 +1,10 @@
-# Irving 2021 #
+# Irving Twenty Twenty-One #
 **Contributors:** [alleyinteractive](https://profiles.wordpress.org/alleyinteractive/)  
 **Tags:** irving, decoupled, headless  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
-An Irving replica of the WordPress 2021 theme.
+An Irving replica of the WordPress Twenty Twenty-One theme.
 
 ## Description ##
 This theme replicates the design and functionality of the  [WordPress Twenty Twenty-One](https://github.com/WordPress/twentytwentyone) theme using [Irving](https://irvingjs.com).

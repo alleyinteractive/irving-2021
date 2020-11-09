@@ -1,7 +1,7 @@
 {
-  "name": "irving-2021",
+  "name": "irving-twenty-twenty-one",
   "version": "1.0.0",
-  "description": "Irving 2021.",
+  "description": "Irving Twenty Twenty-One.",
   "main": "index.js",
   "scripts": {
     "dev": "irving dev",
