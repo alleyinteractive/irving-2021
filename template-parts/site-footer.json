@@ -1,6 +1,50 @@
 {
-  "name": "irving/text",
+  "name": "irving/container",
   "config": {
-    "content": "template-parts/site-footer.json"
-  }
+    "tag": "footer",
+    "id": "colophon",
+    "class_name": "site-footer",
+    "role": "contentinfo"
+  },
+  "children": [
+    {
+      "name": "irving/site-menu",
+      "config": {
+        "location": "footer"
+      }
+    },
+    {
+      "name": "irving/container",
+      "config": {
+        "class_name": "site-info"
+      },
+      "children": [
+        {
+          "name": "irving/container",
+          "config": {
+            "class_name": "site-name"
+          },
+          "children": [
+            {
+              "name": "irving/site-logo"
+            }
+          ]
+        },
+        {
+          "name": "irving/container",
+          "config": {
+            "class_name": "powered-by"
+          },
+          "children": [
+            {
+              "name": "irving/text",
+              "config": {
+                "content": "Proudly powered by Irving"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
