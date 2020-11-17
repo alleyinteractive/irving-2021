@@ -1,6 +1,7 @@
 {
-  "name": "irving/text",
+  "name": "twentytwentyone/site-header",
   "config": {
-    "content": "template-parts/site-header.json"
+    "id": "masthead",
+    "role": "banner"
   }
 }
