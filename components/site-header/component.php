@@ -16,7 +16,7 @@ use WP_Irving\Components\Component;
 Components\register_component_from_config(
 	__DIR__ . '/component',
 	[
-		'config_callback' => function( array $config ): array {
+		'config_callback'   => function( array $config ): array {
 			// Set classnames based on WP data.
 			$wrapper_classes  = 'site-header';
 			$wrapper_classes .= has_custom_logo() ? ' has-logo' : '';
@@ -46,7 +46,7 @@ Components\register_component_from_config(
 				'irving/container',
 				[
 					'config' => [
-						'class_name' => 'site-branding'
+						'class_name' => 'site-branding',
 					],
 				]
 			);
@@ -73,7 +73,7 @@ Components\register_component_from_config(
 					$site_name = new Component(
 						'irving/fragment',
 						[
-							'config' => [
+							'config'   => [
 								'tag'        => 'h1',
 								'class_name' => esc_attr( $header_class ),
 							],
@@ -81,16 +81,16 @@ Components\register_component_from_config(
 								[
 									'name'     => 'irving/link',
 									'config'   => [
-										'href'    => esc_url( home_url( '/' ) ),
+										'href' => esc_url( home_url( '/' ) ),
 									],
 									'children' => [
 										[
-											'name'    => 'irving/text',
-											'config'  => [
+											'name'   => 'irving/text',
+											'config' => [
 												'content' => esc_html( $site_name ),
-											]
-										]
-									]
+											],
+										],
+									],
 								],
 							],
 						]
@@ -99,24 +99,24 @@ Components\register_component_from_config(
 					$site_name = new Component(
 						'irving/fragment',
 						[
-							'config' => [
+							'config'   => [
 								'tag'        => 'p',
 								'class_name' => esc_attr( $header_class ),
 							],
 							'children' => [
 								[
-									'name' => 'irving/link',
+									'name'     => 'irving/link',
 									'config'   => [
-										'href'    => esc_url( home_url( '/' ) ),
+										'href' => esc_url( home_url( '/' ) ),
 									],
 									'children' => [
 										[
-											'name'    => 'irving/text',
-											'config'  => [
+											'name'   => 'irving/text',
+											'config' => [
 												'content' => esc_html( $site_name ),
-											]
-										]
-									]
+											],
+										],
+									],
 								],
 							],
 						]
@@ -128,16 +128,18 @@ Components\register_component_from_config(
 
 			// Display the tagline if set.
 			if ( $description && get_theme_mod( 'display_title_and_tagline', true ) ) {
-				$site_branding->append_child( new Component(
-					'irving/text',
-					[
-						'config' => [
-							'tag' => 'p',
-							'class_name' => 'site-description',
-							'content' => $description,
-						],
-					]
-				) );
+				$site_branding->append_child(
+					new Component(
+						'irving/text',
+						[
+							'config' => [
+								'tag'        => 'p',
+								'class_name' => 'site-description',
+								'content'    => $description,
+							],
+						]
+					)
+				);
 			}
 
 			// Add the site-branding component as a child.
@@ -153,7 +155,7 @@ Components\register_component_from_config(
 							'id'         => 'site-navigation',
 							'class_name' => 'primary-navigation',
 							'role'       => 'navigation',
-							'aria_label' => esc_attr__( 'Primary menu', 'twentytwentyone' ),
+							'aria_label' => esc_attr__( 'Primary menu', 'irving-twentytwentyone' ),
 						],
 						'children' => [
 							[
@@ -161,35 +163,35 @@ Components\register_component_from_config(
 								'config'   => [
 									'class_name' => 'menu-button-container',
 								],
-								'children'        => [
+								'children' => [
 									[
-										'name'           => 'irvng/button',
-										'config'         => [
-											'id'            => 'primary-mobile-menu',
-											'class_name'    => 'button',
+										'name'     => 'irvng/button',
+										'config'   => [
+											'id'         => 'primary-mobile-menu',
+											'class_name' => 'button',
 											'aria_controls' => 'primary-menu-list',
 											'aria_expanded' => 'false',
 										],
-										'children'       => [
+										'children' => [
 											[
-												'name'         => 'irving/text',
-												'config'       => [
-													'class_name'  => 'dropdown-icon open',
-													'html'        => true,
-													'content'     => esc_html__( 'Menu', 'twentytwentyone' ) . ' ' . twenty_twenty_one_get_icon_svg( 'ui', 'menu' ),
+												'name'   => 'irving/text',
+												'config' => [
+													'class_name' => 'dropdown-icon open',
+													'html' => true,
+													'content' => esc_html__( 'Menu', 'irving-twentytwentyone' ) . ' ' . twenty_twenty_one_get_icon_svg( 'ui', 'menu' ),
 												],
 											],
 											[
-												'name'         => 'irving/text',
-												'config'       => [
-													'class_name'  => 'dropdown-icon close',
-													'html'        => true,
-													'content'     => esc_html__( 'Close', 'twentytwentyone' ) . ' ' . twenty_twenty_one_get_icon_svg( 'ui', 'close' ),
+												'name'   => 'irving/text',
+												'config' => [
+													'class_name' => 'dropdown-icon close',
+													'html' => true,
+													'content' => esc_html__( 'Close', 'irving-twentytwentyone' ) . ' ' . twenty_twenty_one_get_icon_svg( 'ui', 'close' ),
 												],
 											],
-										]
-									]
-								]
+										],
+									],
+								],
 							],
 							[
 								'name'   => 'irving/menu',
@@ -207,6 +209,6 @@ Components\register_component_from_config(
 			}
 
 			return $children;
-		}
+		},
 	]
 );

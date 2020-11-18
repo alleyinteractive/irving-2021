@@ -8,7 +8,7 @@
  * @link https://make.wordpress.org/themes/2020/07/06/printing-navigation-block-html-from-a-legacy-menu-in-themes/
  *
  * @package WordPress
- * @subpackage Twenty_Twenty_One
+ * @subpackage Irving_Twenty_Twenty_One
  * @since 1.0.0
  */
 

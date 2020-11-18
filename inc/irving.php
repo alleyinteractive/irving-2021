@@ -3,7 +3,7 @@
  * Irving functionality.
  *
  * @package WordPress
- * @subpackage Twenty_Twenty_One
+ * @subpackage Irving_Twenty_Twenty_One
  * @since 1.0.0
  */
 
@@ -13,7 +13,7 @@ use WP_Irving\Components\Component;
 require_once dirname( __DIR__ ) . '/components/components.php';
 
 // Add the theme stylesheet to Irving.
-add_filter( 'wp_irving_component_children', 'twentytwentyone_enqueue_theme_styles', 10, 3 );
+add_filter( 'wp_irving_component_children', 'irving_twentytwentyone_enqueue_theme_styles', 10, 3 );
 
 /**
  * Enqueue theme styles into the <head> component.
@@ -23,7 +23,7 @@ add_filter( 'wp_irving_component_children', 'twentytwentyone_enqueue_theme_style
  * @param string $name     Name of this component.
  * @return array
  */
-function twentytwentyone_enqueue_theme_styles( array $children, array $config, string $name ): array {
+function irving_twentytwentyone_enqueue_theme_styles( array $children, array $config, string $name ): array {
 	// Ony run this action on the `irving/head` in a `page` context.
 	if (
 		'irving/head' !== $name

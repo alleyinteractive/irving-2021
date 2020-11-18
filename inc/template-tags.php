@@ -3,7 +3,7 @@
  * Custom template tags for this theme
  *
  * @package WordPress
- * @subpackage Twenty_Twenty_One
+ * @subpackage Irving_Twenty_Twenty_One
  * @since 1.0.0
  */
 
