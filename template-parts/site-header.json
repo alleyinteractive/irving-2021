@@ -1,0 +1,7 @@
+{
+  "name": "twentytwentyone/site-header",
+  "config": {
+    "id": "masthead",
+    "role": "banner"
+  }
+}

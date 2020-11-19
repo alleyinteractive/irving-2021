@@ -6,7 +6,7 @@
         {
           "name": "irving/template-part",
           "config": {
-            "slug": "header"
+            "slug": "site-header"
           }
         }
       ]
@@ -20,7 +20,7 @@
         {
           "name": "irving/template-part",
           "config": {
-            "slug": "footer"
+            "slug": "site-footer"
           }
         }
       ]
