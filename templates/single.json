@@ -2,11 +2,19 @@
   "page": [
     {
       "name": "irving/body-wrapper",
+      "config": {
+        "class_name": "site-main"
+      },
       "children": [
+        {
+          "name": "template-part/content-single"
+        },
         {
           "name": "irving/text",
           "config": {
-            "content": "templates/single.json"
+            "class_name": "navigation post-navigation aligncenter",
+            "content": "[Post Navigation placeholder]",
+            "tag": "div"
           }
         }
       ]

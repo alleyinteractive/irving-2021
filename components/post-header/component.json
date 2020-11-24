@@ -1,0 +1,14 @@
+{
+  "name": "twentytwentyone/post-header",
+  "_alias": "irving/container",
+  "config": {
+    "tag": {
+      "default": "header",
+      "type": "string"
+    },
+    "max_width": {
+      "default": "",
+      "type": "string"
+    }
+  }
+}

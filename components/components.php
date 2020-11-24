@@ -11,11 +11,11 @@ if ( ! defined( 'WP_IRVING_PATH' ) ) {
 	return;
 }
 
-$irving_twentytwentyone_components = [
-	'site-header',
-];
+// Autoload all of the components.
+foreach ( glob( __DIR__ . '/*', GLOB_ONLYDIR ) as $irving_twentytwentyone_component_dir ) {
+	$irving_twentytwentyone_component = "${irving_twentytwentyone_component_dir}/component.php";
 
-foreach ( $irving_twentytwentyone_components as $irving_twentytwentyone_component ) {
-	$irving_twentytwentyone_path = __DIR__ . "/$irving_twentytwentyone_component/component.php";
-	require_once $irving_twentytwentyone_path;
+	if ( file_exists( $irving_twentytwentyone_component ) ) {
+		require_once $irving_twentytwentyone_component;
+	}
 };
