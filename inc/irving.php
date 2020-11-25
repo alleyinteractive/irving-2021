@@ -27,7 +27,7 @@ function irving_twentytwentyone_enqueue_theme_styles( array $children, array $co
 	// Ony run this action on the `irving/head` in a `page` context.
 	if ( 'irving/head' === $name ) {
 
-		$children = new Component(
+		$children[] = new Component(
 			'link',
 			[
 				'config' => [
