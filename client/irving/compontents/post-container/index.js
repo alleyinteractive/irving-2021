@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import withThemes from '@irvingjs/styled/components/hoc/withThemes';
+import withThemes from '@irvingjs/styled/components/hoc/withThemes';
 import groupChildren from 'utils/groupChildren';
-// import * as defaultStyles from './themes/default';
+import * as defaultStyles from './themes/default';
 
 /**
  * Content single.
@@ -12,12 +12,12 @@ const PostContainer = (props) => {
     children,
     className,
     id,
-    // theme,
+    theme,
   } = props;
 
-  /* eslint-disable no-empty-pattern */
-  // const {
-  // } = theme;
+  const {
+    ArticleWrapper,
+  } = theme;
 
   // Deconstruct children by the group prop.
   const {
@@ -27,11 +27,11 @@ const PostContainer = (props) => {
   } = groupChildren(children);
 
   return (
-    <article id={id} className={className}>
+    <ArticleWrapper id={id} className={className}>
       {postHeader}
       {postContent}
       {postFooter}
-    </article>
+    </ArticleWrapper>
   );
 };
 
@@ -39,7 +39,7 @@ PostContainer.defaultProps = {
   children: [],
   className: '',
   id: '',
-  // theme: defaultStyles,
+  theme: defaultStyles,
 };
 
 PostContainer.propTypes = {
@@ -58,15 +58,15 @@ PostContainer.propTypes = {
   /**
    * Theme (styles) to apply to the component.
    */
-  // theme: PropTypes.object,
+  theme: PropTypes.object,
 };
 
 export const themeMap = {
-  // default: defaultStyles,
+  default: defaultStyles,
 };
 
 export { PostContainer as PureComponent };
 
-// export const StyledComponent = withThemes(themeMap)(PostContainer);
+export const StyledComponent = withThemes(themeMap)(PostContainer);
 
-// export default StyledComponent;
+export default StyledComponent;
