@@ -24,26 +24,20 @@ add_filter( 'wp_irving_component_children', 'irving_twentytwentyone_enqueue_them
  * @return array
  */
 function irving_twentytwentyone_enqueue_theme_styles( array $children, array $config, string $name ): array {
-	// Ony run this action on the `irving/head` in a `page` context.
-	if (
-		'irving/head' !== $name
-		|| 'page' !== ( $config['context'] ?? 'page' )
-	) {
-		return $children;
+	if ( 'irving/head' === $name ) {
+		$children[] = new Component(
+			'link',
+			[
+				'config' => [
+					'href'  => get_stylesheet_uri(),
+					'id'    => 'twenty-twenty-one-style-css',
+					'media' => 'all',
+					'rel'   => 'stylesheet',
+					'type'  => 'text/css',
+				],
+			]
+		);
 	}
-
-	$children[] = new Component(
-		'link',
-		[
-			'config' => [
-				'href'  => get_stylesheet_uri(),
-				'id'    => 'twenty-twenty-one-style-css',
-				'media' => 'all',
-				'rel'   => 'stylesheet',
-				'type'  => 'text/css',
-			],
-		]
-	);
 
 	return $children;
 }
