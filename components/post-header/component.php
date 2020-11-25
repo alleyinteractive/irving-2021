@@ -26,7 +26,7 @@ Components\register_component_from_config(
 					'irving/post-title',
 					[
 						'config' => [
-							'class_name' => 'entry_title',
+							'class_name' => 'entry-title',
 							'tag'        => is_singular() ? 'h1' : 'h2',
 						],
 					]
