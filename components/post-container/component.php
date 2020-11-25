@@ -31,6 +31,6 @@ Components\register_component_from_config(
 			$config['class_name'] = ob_get_clean();
 
 			return $config;
-		}
+		},
 	]
 );

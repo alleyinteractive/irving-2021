@@ -37,6 +37,6 @@ Components\register_component_from_config(
 			];
 
 			return $children;
-		}
+		},
 	]
 );

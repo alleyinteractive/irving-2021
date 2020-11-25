@@ -27,6 +27,6 @@ Components\register_component_from_config(
 			$config['content'] = ob_get_clean();
 
 			return $config;
-		}
+		},
 	]
 );
