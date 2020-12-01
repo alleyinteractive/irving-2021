@@ -14,6 +14,19 @@
                 {
                   "name": "template-part/content"
                 }
+              ],
+              "after": [
+                {
+                  "name": "irving/query-pagination"
+                }
+              ],
+              "no_results": [
+                {
+                  "name": "irving/template-part",
+                  "config": {
+                    "name": "content-none"
+                  }
+                }
               ]
             }
           }
