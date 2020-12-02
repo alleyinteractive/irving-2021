@@ -20,19 +20,55 @@ Components\register_component_from_config(
 	__DIR__ . '/component',
 	[
 		'children_callback' => function( $children ) {
-
-			$children = [
-				new Component(
+			if ( is_singular() ) {
+				$post_title = new Component(
 					'irving/post-title',
 					[
 						'config' => [
 							'class_name' => 'entry-title',
-							'tag'        => is_singular() ? 'h1' : 'h2',
+							'tag'        => 'h1',
 						],
 					]
-				),
+				);
+			} else {
+				$post_title = new Component(
+					'irving/fragment',
+					[
+						'config'   => [
+							'class_name' => 'entry-title default-max-width',
+							'tag'        => 'h2',
+						],
+						'children' => [
+							[
+								'irving/post-permalink',
+								[
+									'theme'    => 'default',
+									'children' => [
+										[
+											'irving/post-title',
+											[
+												'config' => [
+													'tag' => 'span',
+												],
+											],
+										],
+									],
+								],
+							],
+						],
+					]
+				);
+			}
+
+			$children = [
+				$post_title,
 				new Component(
-					'irving/post-featured-image'
+					'irving/post-featured-image',
+					[
+						'config' => [
+							'class_name' => 'post-thumbnail',
+						],
+					]
 				),
 			];
 
