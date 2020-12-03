@@ -2,11 +2,55 @@
   "page": [
     {
       "name": "irving/body-wrapper",
+      "config": {
+        "class_name": "site-main"
+      },
       "children": [
         {
-          "name": "irving/text",
+          "name": "irving/container",
           "config": {
-            "content": "templates/archive.json"
+            "tag": "header",
+            "class_name": "page-header alignwide"
+          },
+          "children": [
+            {
+              "name": "irving/archive-title",
+              "config": {
+                "tag": "h1",
+                "class_name": "page-title"
+              }
+            },
+            {
+              "name": "twentytwentyone/archive-description",
+              "config": {
+                "class_name": "archive-description"
+              }
+            }
+          ]
+        },
+        {
+          "name": "irving/post-list",
+          "config": {
+            "templates": {
+              "item": [
+                {
+                  "name": "template-part/content"
+                }
+              ],
+              "after": [
+                {
+                  "name": "irving/query-pagination"
+                }
+              ],
+              "no_results": [
+                {
+                  "name": "irving/template-part",
+                  "config": {
+                    "name": "content-none"
+                  }
+                }
+              ]
+            }
           }
         }
       ]

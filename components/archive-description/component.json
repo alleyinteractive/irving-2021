@@ -1,0 +1,14 @@
+{
+  "name": "twentytwentyone/archive-description",
+  "_alias": "irving/text",
+  "config": {
+    "tag": {
+      "default": "div",
+      "type": "string"
+    },
+    "html": {
+      "default": true,
+      "type": "bool"
+    }
+  }
+}
