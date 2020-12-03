@@ -1,0 +1,13 @@
+{
+  "name": "twentytwentyone/post-container",
+  "config": {
+    "post_id": {
+      "default": 0,
+      "type": "int"
+    }
+  },
+  "use_context": {
+    "irving/post_id": "post_id",
+    "irving/wp_query": "wp_query"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "twentytwentyone/post-footer",
+  "_alias": "irving/text",
+  "config": {
+    "tag": {
+      "default": "footer",
+      "type": "string"
+    },
+    "html": {
+      "default": true,
+      "type": "bool"
+    }
+  }
+}

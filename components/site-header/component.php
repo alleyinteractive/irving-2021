@@ -1,8 +1,8 @@
 <?php
 /**
- * Container.
+ * Site Header.
  *
- * Base wrapper component for creating layouts.
+ * Layout for the site header.
  *
  * @package WP_Irving
  */
@@ -194,7 +194,7 @@ Components\register_component_from_config(
 								],
 							],
 							[
-								'name'   => 'irving/menu',
+								'name'   => 'irving/site-menu',
 								'config' => [
 									'location'        => 'primary',
 									'class_name'      => 'menu-wrapper',

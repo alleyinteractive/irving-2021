@@ -1,0 +1,29 @@
+{
+  "name": "twentytwentyone/post-container",
+  "config": {
+    "class_name": "format-standard hentry"
+  },
+  "children": [
+    {
+      "name": "twentytwentyone/post-header",
+      "config": {
+        "class_name": "entry-header alignwide",
+        "group": "postHeader"
+      }
+    },
+    {
+      "name": "irving/post-excerpt",
+      "config": {
+        "class_name": "entry-content",
+        "group": "postContent"
+      }
+    },
+    {
+      "name": "twentytwentyone/post-footer",
+      "config": {
+        "class_name": "entry-footer default-max-width",
+        "group": "postFooter"
+      }
+    }
+  ]
+}

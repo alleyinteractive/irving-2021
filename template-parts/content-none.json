@@ -1,0 +1,26 @@
+{
+  "name": "irving/container",
+  "config": {
+    "class_name": "no-results not-found",
+    "tag": "section"
+  },
+  "children": [
+    {
+      "name": "irving/container",
+      "config": {
+        "class_name": "page-header alignwide",
+        "tag": "header"
+      },
+      "children": [
+        {
+          "name": "irving/text",
+          "config": {
+            "class_name": "page-title",
+            "content": "Nothing here",
+            "tag": "h1"
+          }
+        }
+      ]
+    }
+  ]
+}
