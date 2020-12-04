@@ -2,11 +2,45 @@
   "page": [
     {
       "name": "irving/body-wrapper",
+      "config": {
+        "class_name": "site_main"
+      },
       "children": [
         {
-          "name": "irving/text",
+          "name": "irving/container",
           "config": {
-            "content": "templates/404.json"
+            "tag": "header",
+            "class_name": "page-header alignwide"
+          },
+          "children": [
+            {
+              "name": "irving/text",
+              "config": {
+                "tag": "h1",
+                "class_name": "page-title",
+                "content": "Nothihg here"
+              }
+            }
+          ]
+        },
+        {
+          "name": "irving/container",
+          "config": {
+            "tag": "div",
+            "class_name": "page-content",
+            "children": [
+              {
+                "name": "irving/text",
+                "config": {
+                  "tag": "p",
+                  "content": "It looks like nothing was found at this location. Maybe try a search?"
+                }
+              },
+              {
+                "name": "irving/text",
+                "content": "[Placeholder for search form template-part]"
+              }
+            ]
           }
         }
       ]
