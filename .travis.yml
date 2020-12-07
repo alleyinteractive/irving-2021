@@ -25,7 +25,6 @@ branches:
 cache:
   directories:
     - $HOME/.composer/cache
-    - ./vendor
 
 # Git clone depth.
 git:
@@ -35,7 +34,7 @@ git:
 jobs:
   fast_finish: true
   include:
-    - name: "Current Stable"
+    - name: "Current Stable WP/PHP"
       env: WP_VERSION=latest PHPCS=1 WP_TRAVIS_OBJECT_CACHE=1
     - name: "Canary WP/PHP"
       env: WP_VERSION=trunk WP_TRAVIS_OBJECT_CACHE=1
