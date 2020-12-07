@@ -32,12 +32,20 @@ git:
   depth: 1
   quiet: true
 
-matrix:
+jobs:
   fast_finish: true
   include:
-    - env: WP_VERSION=latest PHP_LINT=1
+    - name: "Current Stable"
+      env: WP_VERSION=latest PHPCS=1 WP_JS=1 WP_TRAVIS_OBJECT_CACHE=1
+    - name: "Canary WP/PHP"
+      env: WP_VERSION=trunk WP_TRAVIS_OBJECT_CACHE=1
+      php: 7.4
+  allow_failures:
     - env: WP_VERSION=trunk
-    - env: WP_VERSION=latest WP_PHPCS=1 WP_TRAVIS_OBJECT_CACHE=1
+
+before_install:
+  # Bail early if a git merge conflict is detected.
+  - bash bin/script-git-conflict-check.sh
 
 # Prepare your build for testing.
 # Failures in this section will result in build status 'errored'.
@@ -48,7 +56,7 @@ before_script:
   - export PATH="${HOME}/.config/composer/vendor/bin:${PATH}"
 
   # Couple the PHPUnit version to the PHP version.
-  - composer global require "phpunit/phpunit=6.1.*"
+  - composer global require "phpunit/phpunit=^7.5"
 
   - og_dir="$(pwd)"
   - theme_slug="$(basename $(pwd))"
@@ -67,11 +75,11 @@ before_script:
       fi
 
       # Set up the theme. This assumes that this repo name matches the theme name.
-      mkdir -p "${WP_CORE_DIR}wp-content/themes/$theme_slug"
-      cp -R . "${WP_CORE_DIR}wp-content/themes/$theme_slug/"
+      mkdir -p "${WP_CORE_DIR}/wp-content/themes/$theme_slug"
+      cp -R . "${WP_CORE_DIR}/wp-content/themes/$theme_slug/"
 
       # Hop into theme's directory.
-      cd ${WP_CORE_DIR}wp-content/themes/$theme_slug/
+      cd ${WP_CORE_DIR}/wp-content/themes/$theme_slug/
 
       # For debugging.
       which phpunit
@@ -80,7 +88,7 @@ before_script:
 
   # Set up phpcs.
   - |
-    if [[ "$WP_PHPCS" == "1" ]] ; then
+    if [[ "$PHPCS" == "1" ]] ; then
       composer install
     fi
 
@@ -98,34 +106,21 @@ before_script:
 # Default is specific to project language.
 # All commands must exit with code 0 on success. Anything else is considered failure.
 script:
-  # Search for PHP syntax errors.
-  #
-  # Only need to run this once per PHP version.
+  # Sniff Coding Standards.
   - |
-    if [[ "$PHP_LINT" == "1" ]] ; then
-      find . -type "f" -iname "*.php" -not -path "./vendor/*" | xargs -L "1" php -l
-    fi
-
-  # WordPress Coding Standards.
-  #
-  # These are the same across PHP and WordPress, so we need to run them only once.
-  #
-  # @link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
-  # @link http://pear.php.net/package/PHP_CodeSniffer/
-  - |
-    if [[ "$WP_PHPCS" == "1" ]] ; then
+    if [[ "$PHPCS" == "1" ]] ; then
       composer phpcs
     fi
-
-  # Run the theme's unit tests, both in single and multisite.
-  - phpunit
-  - WP_MULTISITE=1 phpunit
 
   # Run the theme's JavaScript tests.
   - |
     if [[ "$WP_JS" == "1" ]] ; then
       npm run build
     fi
+
+  # Run the theme's unit tests, both in single and multisite.
+  - phpunit
+  - WP_MULTISITE=1 phpunit
 
 # Receive notifications for build results.
 # @link http://docs.travis-ci.com/user/notifications/#Email-notifications
