@@ -36,7 +36,7 @@ jobs:
   fast_finish: true
   include:
     - name: "Current Stable"
-      env: WP_VERSION=latest PHPCS=1 WP_JS=1 WP_TRAVIS_OBJECT_CACHE=1
+      env: WP_VERSION=latest PHPCS=1 WP_TRAVIS_OBJECT_CACHE=1
     - name: "Canary WP/PHP"
       env: WP_VERSION=trunk WP_TRAVIS_OBJECT_CACHE=1
       php: 7.4
