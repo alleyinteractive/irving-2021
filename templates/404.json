@@ -18,7 +18,7 @@
               "config": {
                 "tag": "h1",
                 "class_name": "page-title",
-                "content": "Nothihg here"
+                "content": "Nothing here"
               }
             }
           ]
@@ -27,21 +27,33 @@
           "name": "irving/container",
           "config": {
             "tag": "div",
-            "class_name": "page-content",
-            "children": [
-              {
-                "name": "irving/text",
-                "config": {
-                  "tag": "p",
-                  "content": "It looks like nothing was found at this location. Maybe try a search?"
-                }
+            "class_name": "error-404 not-found default max-width"
+          },
+          "children": [
+            {
+              "name": "irving/fragment",
+              "config": {
+                "tag": "div",
+                "class_name": "page-content"
               },
-              {
-                "name": "irving/text",
-                "content": "[Placeholder for search form template-part]"
-              }
-            ]
-          }
+              "children": [
+                {
+                  "name": "irving/text",
+                  "config": {
+                    "tag": "p",
+                    "content": "It looks like nothing was found at this location. Maybe try a search?"
+                  }
+                },
+                {
+                  "name": "irving/text",
+                  "config": {
+                    "tag": "p",
+                    "content": "[Placeholder for search form template-part]"
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
     }
