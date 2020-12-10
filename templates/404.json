@@ -27,7 +27,7 @@
           "name": "irving/container",
           "config": {
             "tag": "div",
-            "class_name": "error-404 not-found default max-width"
+            "class_name": "error-404 not-found default-max-width"
           },
           "children": [
             {
