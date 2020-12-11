@@ -1,0 +1,22 @@
+{
+  "name": "irving/container",
+  "config": {
+    "class_name": "page-content default-max-width",
+    "tag": "div"
+  },
+  "children": [
+    {
+      "name": "irving/text",
+      "config": {
+        "content": "Sorry, but nothing matched your search terms. Please try again with some different keywords.",
+        "tag": "p"
+      }
+    },
+    {
+      "name": "irving/query-search-form",
+      "config": {
+        "class_name": "search-form"
+      }
+    }
+  ]
+}
