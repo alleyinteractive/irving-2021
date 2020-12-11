@@ -41,7 +41,7 @@
                 {
                   "name": "irving/template-part",
                   "config": {
-                    "name": "content-none"
+                    "slug": "content-none"
                   }
                 }
               ]
