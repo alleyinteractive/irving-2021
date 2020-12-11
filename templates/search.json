@@ -2,11 +2,50 @@
   "page": [
     {
       "name": "irving/body-wrapper",
+      "config": {
+        "class_name": "site-main"
+      },
       "children": [
         {
-          "name": "irving/text",
+          "name": "irving/container",
           "config": {
-            "content": "templates/search.json"
+            "tag": "header",
+            "class_name": "page-header alignwide"
+          },
+          "children": [
+            {
+              "name": "irving/query-search-results-found",
+              "config": {
+                "class_name": "page-title",
+                "content_format": "Results for \"%2$s\"",
+                "tag": "h1"
+              }
+            }
+          ]
+        },
+        {
+          "name": "irving/post-list",
+          "config": {
+            "templates": {
+              "item": [
+                {
+                  "name": "template-part/content"
+                }
+              ],
+              "after": [
+                {
+                  "name": "irving/query-pagination"
+                }
+              ],
+              "no_results": [
+                {
+                  "name": "irving/template-part",
+                  "config": {
+                    "slug": "content-none-search"
+                  }
+                }
+              ]
+            }
           }
         }
       ]
